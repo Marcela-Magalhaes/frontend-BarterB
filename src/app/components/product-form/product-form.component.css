@@ -1,0 +1,15 @@
+.container .form-group{
+    margin: 10px auto;
+}
+
+.container .error{
+    color: tomato;
+}
+
+.container input.ng-invalid.ng-touched{
+    border: 1px solid tomato;
+}
+
+.container input.ng-valid.ng-touched{
+    border: 1px solid lightgreen;
+}

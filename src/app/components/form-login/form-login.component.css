@@ -1,0 +1,20 @@
+.container{
+    width: 30vw;
+    text-align: center;
+}
+
+.container .form-group{
+    margin: 20px auto;
+}
+
+.error{
+    color: tomato;
+}
+
+.container input.ng-invalid.ng-touched{
+    border: 1px solid tomato;
+}
+
+.container input.ng-valid.ng-touched{
+    border: 1px solid lightgreen;
+}

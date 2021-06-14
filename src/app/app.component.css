@@ -1,0 +1,27 @@
+
+header{
+    margin-top: 0;
+    font-weight: 600;
+    background-color: rgba(162, 226, 223, 0.397) ;
+    width: 100%;
+    height: max-content;
+}
+
+header img{
+    border-radius: 23px;
+}
+.navbar-brand{
+    
+    font-size: 1.5rem;
+}
+
+form input{
+    border-radius: 15px;
+    text-align: center;
+}
+
+footer{
+    background-color: rgba(162, 226, 223, 0.397);
+    font-weight: 500;
+    height: 50px;
+}

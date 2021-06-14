@@ -1,0 +1,18 @@
+.row{
+    background-color:rgb(245, 241, 241);
+    padding: 10px 50px;
+}
+
+.card{
+    border-radius: 10px;
+    width: 100%;
+    height: 90%;
+    padding: 5px;
+    margin: 5px auto 10px auto;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}

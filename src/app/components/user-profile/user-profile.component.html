@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+
+<div class="container">
+    <h1 class="text-center my-4">Mi perfil</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="profile-account-page-left shadow-sm bg-white h-100">
+                <div class="border-bottom p-3">
+                    <div class="profile-user text-center">
+                        <div class="profile-user-media">
+                            <img class="mb-3 rounded-pill shadow-sm mt-1" [src]="user?.imgUrl" alt="user.imgUrl">
+                            <div class="profile-user-media-body">
+                                <h5 class="mb-3">{{ user?.name }} {{ user?.surname }}</h5>
+                                <hr>
+                                <p class="mb-1"><strong>Nombre de usuario:</strong> {{ user?.username }}</p>
+                                <p class="mb-1"><strong>Email:</strong> {{ user?.email }}</p>
+                                <p class="mb-1"><strong>Teléfono:</strong> {{ user?.phoneNumber }}</p>
+                                <p class="mb-1"><strong>Ciudad:</strong> {{ user?.address?.district }}</p>
+                                <p class="mb-1"><strong>Código Postal:</strong> {{ user?.address?.zipCode }}</p>
+                                <p><small class="mb-3">Miembro desde: --/--/--</small></p>
+                                
+                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-toggle="modal" data-target="#edit-profile-modal"  [routerLink]="['/user/update', user?._id]"><i class="icofont-ui-edit"></i> EDITAR PERFIL</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-account-page-right shadow-sm bg-white p-4 h-100">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade  active show" id="favourites" role="tabpanel" aria-labelledby="favourites-tab">
+                        <h4 class="font-weight-bold mt-0 mb-4 text-center">Mis productos</h4>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4 pb-2 text-center" *ngFor="let product of productsList">
+                                <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" >
+                                    <div class="list-card-image">
+                                        <a [routerLink]="['/products', product?._id]" >
+                                            <img [src]="product?.imgUrl" class="img-fluid item-img">
+                                        </a>
+                                    </div>
+                                    <div class="p-3 position-relative" >
+                                        <div class="list-card-body my-3">
+                                            <h6 class="mb-1"><a [routerLink]="['/products', product?._id]" class="text-black">{{ product?.name }}</a></h6>   
+                                        </div>
+                                        <button class="btn btn-warning btn-sm m-1" [routerLink]="['/product/update', product._id]">Editar</button>
+                                        <button class="btn btn-danger btn-sm m-1" (click)="deleteProduct(product._id)">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

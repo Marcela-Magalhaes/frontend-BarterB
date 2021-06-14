@@ -1,0 +1,22 @@
+
+<h4 class="text-center my-4" *ngIf="title !== ''">Todos los productos de la categoría {{ title }}</h4> 
+<h4 class="text-center my-4" *ngIf="titulo !== ''">Resultado de la búsqueda</h4>
+<h4 class="text-center my-4" *ngIf="title === '' && titulo === ''">Todos los productos</h4>
+<hr>
+<section class="container">
+    <div class="row" *ngIf="this.productsList.length !== 0">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let product of productsList">
+            <div class="card">
+                <a [routerLink]="['/products', product?._id]">
+                    <img [src]="product?.imgUrl" class="card-img-top">
+                </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ product?.name }}</h4>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="this.productsList.length === 0">
+        <h3>No hay productos en esta categoría</h3>
+    </div>
+</section>

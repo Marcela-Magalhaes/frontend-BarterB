@@ -1,0 +1,16 @@
+
+<section class="container text-center my-4">
+    <h2>Todos los productos de {{user?.name}} {{user?.surname}}</h2>
+    <div class="userInfo mt-4">
+        <img class="mb-3 rounded-pill shadow-sm mt-1" [src]="user?.imgUrl" alt="userImg">
+        
+    </div>
+    <div class="row text-center mt-4">
+        <div class="col-3 text-center" *ngFor="let product of productsList">
+            <div class="card">
+                <img [src]="product?.imgUrl" alt="productImg" [routerLink]="['/products', product?._id]">
+                <h5 class=" mb-3">{{ product?.name }}</h5>
+            </div>
+        </div>
+    </div>
+</section>
