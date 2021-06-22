@@ -8,9 +8,13 @@
                 <p><strong>Descripción:</strong> {{ product?.description }}</p>
                 <p>Subido por: {{ user?.name }}</p>
                 
-                <p class="linkUserProudcts" [routerLink]="['/user/products', user?._id]"><small>Ver todos los productos de este usuario</small></p>   
+                <a class="linkUserProudcts" [routerLink]="['/user/products', user?._id]"><small>Ver todos los productos de este usuario</small></a>   
             </div>
             <button class="btn btn-warning btn-lg px-3 m-2" (click)="contactUser()">¡Lo quiero!</button> 
         </div>
     </div>
 </section>
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

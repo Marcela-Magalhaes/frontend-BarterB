@@ -15,13 +15,21 @@ export class ProductViewComponent implements OnInit {
   product!: Product;
   user!: User;
 
+  lat: number;
+  lng: number;
+  zoom: number;
+  mapTypeId: any;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private userService: UserService,
     private router: Router
   ) { 
-    
+    this.lat = 41.65199;
+    this.lng = -4.72863;
+    this.zoom = 15;
+    this.mapTypeId = 'roadmap';
   }
 
   ngOnInit(): void {

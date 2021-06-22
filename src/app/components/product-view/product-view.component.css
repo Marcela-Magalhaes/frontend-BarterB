@@ -1,12 +1,8 @@
 
 .container{
    width: 50vw;
-   min-height: 100%; 
-   margin-bottom: -50px;
 }
-.container .row{
-    height: 50vh !important;
-    }
+
 .container .btn {
     border-radius: 15px;
 }
@@ -23,4 +19,11 @@
 .container .col-center{
     float: none;
     margin: 0 auto;
+}
+
+agm-map{
+    display: block;
+    margin : 20px auto 30px auto;
+    width: 500px;
+    height: 500px;
 }
